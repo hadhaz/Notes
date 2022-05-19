@@ -1,4 +1,4 @@
-# Data Analysis Learning Path
+# Data Analytics Learning Path
 source: https://jovian.ai/learn/data-analysis-with-python-zero-to-pandas/
 
 1. Introduction to Python
