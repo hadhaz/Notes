@@ -1,0 +1,124 @@
+# Probability
+
+## Addition & Multiplication Rule's
+### Addition Rule's
+We know that P(a or b) = P(a) + P(b) - P(a and b)\
+If the events is mutually exclusive then P(a and b) = 0, So that imply:\
+> P(a or b) = P(a) + P(b)
+### Multiplication Rule's
+We know that P(a|b) = P(a and b)/P(b) and P(b|a) = P(a and b)/P(b).\
+Or We can write like this:\
+P(a and b) = P(a|b) x P(b)
+If the events is independent so P(a|b) = P(a) and P(b|a) = P(b), that imply:\
+> P(a and b) = P(a) x P(b)
+### Exercise
+1. **Question**: Sarah is deciding which courses she wants to take in her next college semester. The probability that she enrolls in Algebra course is 0.30 and the probablity that she enrolls Biology is 0.70. The probability that she will enroll in an Algebra course **given** that she enrolls in Biology Course is 0.40. (a) What is the probabilty that she will enroll in both an Algebra and Biology? (b) WHat is the probability that she will enroll in an Algebra or Biology? (c) Are the two events independent? (d) Are the events mutually exclusive?\
+**Answer**:\
+(a) P(a|b) = P(a and b)/P(b)\
+P(a and b) = P(a|b) x P(b)\
+P(a and b) = 0.40 x 0.70 = 0.28\
+(b) P(a or b) = P(a) + P(b) - P(a and b) = 0.30 + 0.70 - 0.28 = 0.72\
+(c) That's Not Independet, because `P(a) != P(a|b)`\
+(d) Mutually Exclusive, because `P(a and b) != 0`
+## Compound Probability of Independent Events
+### Exercise
+1. **Question:** What is the probability of getting heads twice after flipping a coin? (b) What is the probability of getting HTH after flipping a coin three times? (c) What is the probability of getting two tails and one heads?\n
+**Answer**:\
+(a) P(HH) = P(H) x P(H) = 1/2 x 1/2 = 1/4\
+(b) P(HTH) = P(H)xP(T)xP(H) = (1/2)^3 = 1/8\
+(c) P(HTT or TTH or THT) = 3/8
+2. **Question:** In a standard 52 deck, what is the probability of selecting a queen? (b) What is the probability of selecting a black card that is greater than 3 but less than or equal to 9? (c) What is the probability of selecting a red king on the first try and then a diamond card on the second try without replacement?\
+**Answer:**\
+(a) P(Q) = 4/52 = 1/13\
+(b) n(a) = 6x2 which is {4, 5, 6, 7, 8, 9}x2\
+P = 12/52 = 3/13\
+(c) P(A or B) = P(A) + P(B)
+- P(A) = 1/52 x 12/51   // Red King Diamond
+- P(B) = 1/52 x 13/51   // Red King Love\
+So, P(A or B) = 25/(52x51) = 0.9426%
+## Expected Value
+1. Lisa plays a game in which there are only 2 outcomes. The cost to play the game is $100. If she wins, she receives $500. The probability of winning is 20%. What is expected value for winning a single game on average?
+
+<center>
+
+| Outcomes | Win | Lose |
+|:---------|:----|:-----|
+|   Value  |$500 |-$100 |
+|   Probs  | 20% | 80%  |
+
+<br> 
+</center>
+
+$E(x) = X_1P_1 + X_2P_2$
+
+$E(x) = 500(0.20) - 100(0.8) = 20$ // Per Games
+
+
+
+
+2. Company XYZ generates a profit of $40 for each laptop they sell. The company loses $500 for every laptop that is returned due to some defect. If 3 out of 100 that they produce is defective. What is the expected value of profit per laptop?\
+
+<center>
+
+| Outcomes | Not Defective | Defective |
+|:---------|:--------------|:----------|
+|   Value  |      $40      |   -$500   |
+|   Probs  |      0.97     |    0.03   |
+
+</center>
+
+$E(x) = X_1P_1 + X_2P_2$
+$E(x) = 40(0.97) - 500(0.03) = 23.8$
+
+## Bayes' Theorem
+We know that:
+* $P(A|B) = \frac{P(A\ and\ B)}{P(B)}$
+* $P(B|A) = \frac{P(B\ and\ A)}{P(A)}$\
+And we can modify that equations to:
+* $P(A\ and\ B) = P(A|B) \times P(B)$
+* $P(B\ and\ A) = P(B|A) \times P(A)$
+
+Since,
+
+$P(A\ and\ B) = P(B\ and\ A)$ 
+
+So
+
+$$
+P(A|B)\times P(B) = P(B|A)\times P(A)
+$$
+$$
+P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+$$
+
+### Example
+1. **Question** A particular study showed that 12% of men will likely develop prostate cancer at some point in their lives. A man with prostate cancer has a 95% of a positive test result from a medical screening exam. A man without prostate cancer has a 6% chance of getting a false positive test result. What is the chance that a man has cancer given that he has a positive test result?\
+**Answer:**
+- $P(C) = 12%$
+- $P(+|C) = 95%$
+- $P(+|NC) = 6%$
+$$
+P(C|+) = \frac{P(C)P(+|C)}{P(+)}
+$$
+But, we don't know the $P(+)$ value, So
+
+$$
+P(+) = P(C and +) + P(NC and +)
+$$
+
+$$
+P(+) = P(C)\times P(+|C) + P(+|NC)\times P(NC)
+$$
+
+$$
+P(+) = 0.12\times 0.95 + 0.06\times 0.88 = 0.1668
+$$
+
+So,
+$$
+P(C|+) = \frac{P(+|C)\times P(C)}{P(+)}
+$$
+
+$$
+P(C|+) = \frac{0.95\times 0.12}{0.1668} = 0,68%
+$$
